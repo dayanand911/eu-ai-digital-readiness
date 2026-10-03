@@ -1,0 +1,15 @@
+variable,type,unit,role,definition,source
+country,Categorical,ISO/Eurostat geo code,Identifier / fixed effect,EU Member State code (EU27 individual countries).,Eurostat geo
+industry,Categorical,NACE Rev. 2 code,Identifier / fixed effect,Non-overlapping analytical economic-activity category.,Eurostat nace_r2
+ai_2023,Continuous,% of enterprises,Baseline covariate / RQ1,2023 value of Eurostat indicator E_AI_TANY for enterprises with >=10 persons employed.,isoc_eb_ain2 / E_AI_TANY
+ai_2025,Continuous,% of enterprises,Primary outcome,2025 value of Eurostat indicator E_AI_TANY for enterprises with >=10 persons employed.,isoc_eb_ain2 / E_AI_TANY
+analytics_2023,Continuous,% of enterprises,Independent variable,2023 value of Eurostat indicator E_DA.,isoc_eb_dan2 / E_DA
+analytics_2025,Continuous,% of enterprises,Descriptive / robustness,2025 value of Eurostat indicator E_DA.,isoc_eb_dan2 / E_DA
+cloud_2023,Continuous,% of enterprises,Independent variable,2023 value of Eurostat indicator E_CC.,isoc_cicce_usen2 / E_CC
+cloud_2025,Continuous,% of enterprises,Descriptive / robustness,2025 value of Eurostat indicator E_CC.,isoc_cicce_usen2 / E_CC
+delta_ai,Derived continuous,percentage points,RQ1 outcome,ai_2025 minus ai_2023.,Derived
+*_flag,Categorical,Eurostat observation status,Data quality,Observation flag preserved from the Eurostat TSV. b and d are excluded from the primary comparability screen; u is retained and flagged for sensitivity analysis.,Eurostat TSV
+rq1_eligible,Boolean,TRUE/FALSE,Processing,Valid quality-screened AI values in 2023 and 2025.,Derived
+rq2_eligible,Boolean,TRUE/FALSE,Processing,RQ1 eligible plus valid quality-screened analytics_2023.,Derived
+rq3_eligible,Boolean,TRUE/FALSE,Processing,RQ1 eligible plus valid quality-screened cloud_2023.,Derived
+rq4_eligible,Boolean,TRUE/FALSE,Processing,"Valid quality-screened AI 2023/2025, analytics_2023 and cloud_2023.",Derived
