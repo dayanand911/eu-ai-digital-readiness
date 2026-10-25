@@ -1,0 +1,7 @@
+variable,grid_rows,archive_rows,numeric_cells,missing_non_numeric_cells,numeric_excluded_b_or_d,usable_numeric,usable_pct_of_833,usable_pct_of_837,numeric_u_flag
+ai_2023,837,833,665,168,59,606,72.75,72.4,0
+ai_2025,837,833,652,181,1,651,78.15,77.78,0
+analytics_2023,837,833,649,184,30,619,74.31,73.95,0
+analytics_2025,837,833,651,182,31,620,74.43,74.07,0
+cloud_2023,837,833,568,265,53,515,61.82,61.53,0
+cloud_2025,837,833,607,226,1,606,72.75,72.4,0

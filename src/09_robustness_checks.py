@@ -1,12 +1,13 @@
-"""Planned robustness checks.
+"""Execute the reproducible Week 4 statistical diagnostics and sensitivities.
 
-Primary synopsis commitments:
-1. Preserve Eurostat flags and compare the primary b/d-screened analysis with broader defensible numeric samples.
-2. Use HC3 heteroskedasticity-robust covariance for regression inference.
-3. Examine country/industry dependence with multiway cluster-robust inference where supported by the analysis environment.
-4. Inspect residuals, leverage/Cook's distance, VIF and fitted-value bounds.
-5. For RQ1, supplement the paired t-test with Wilcoxon signed-rank inference if the paired-difference distribution is seriously problematic.
-
-This file intentionally does not hard-code a significance-seeking fallback. Any additional specification must be documented before interpreting results.
+This replaces the original synopsis-stage *description-only* placeholder.
+The two-way cluster tests are EXPLORATORY and not finite-cluster calibrated.
 """
-print(__doc__)
+from pathlib import Path
+import subprocess
+import sys
+HERE = Path(__file__).resolve().parent
+for name in ['week4_model_diagnostics.py','week4_cluster_sensitivity.py']:
+    print(f'Running {name}',flush=True)
+    subprocess.run([sys.executable,str(HERE/name)], check=True)
+print('Verified Week 4 modelling diagnostics and exploratory clustered sensitivity completed.')

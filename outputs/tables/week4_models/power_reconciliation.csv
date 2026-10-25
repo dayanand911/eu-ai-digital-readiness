@@ -1,0 +1,5 @@
+case,tested_predictors,full_model_slopes,observed_N,effect_size_f2,alpha,target_power,required_N_by_ncf,achieved_power_approx
+rq2,1,2,506,0.02,0.05,0.8,395,0.8878459107548052
+rq3,1,2,481,0.02,0.05,0.8,395,0.8718986288341727
+rq4_original_plan,2,59,448,0.02,0.05,0.8,486,0.7653136503731733
+rq4_actual_design,2,56,448,0.02,0.05,0.8,486,0.765339902800835

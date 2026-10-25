@@ -1,0 +1,5 @@
+rq,usable_n,pct_of_837,countries,industries,countries_absent,min_country_contexts,max_country_contexts
+RQ1,551,65.83,25,31,"FR,SE",5,31
+RQ2,506,60.45,24,31,"CZ,FR,SE",5,31
+RQ3,481,57.47,25,31,"FR,SE",5,31
+RQ4,448,53.52,24,31,"CZ,FR,SE",5,31

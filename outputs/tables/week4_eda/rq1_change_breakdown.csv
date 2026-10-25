@@ -1,0 +1,2 @@
+n,mean_change_pp,median_change_pp,sd_pp,increase_count,unchanged_count,decrease_count,increase_pct,unchanged_pct,decrease_pct,min_change_pp,max_change_pp,trimmed_mean_10pct_pp,mean_change_rq4_common_pp,zero_2023_count,zero_2025_count
+551,12.487459165154265,10.71,11.408974110746906,513,4,34,93.10344827586206,0.7259528130671506,6.170598911070781,-26.92,66.67,11.596077097505669,12.730200892857143,20,5

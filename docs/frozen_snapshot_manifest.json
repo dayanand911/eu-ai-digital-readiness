@@ -1,0 +1,20 @@
+{
+  "description": "Frozen source snapshot; original retrieval timestamps were not provided in this archive",
+  "archived_raw_sha256": {
+    "isoc_cicce_usen2_tabular.tsv.gz": "4f006a9711aca97cd9890cb5938494f4ef95d7dcfd21921928f0c22a58d7a5a5",
+    "isoc_eb_ain2_tabular.tsv.gz": "717d8ce23d78b2e36e3365201035878b94bff4171c1b67820067fb7eba8b3557",
+    "isoc_eb_dan2_tabular.tsv.gz": "78205daf5b1870b2755ff854cdb73d195194635474d683cf050d4a9391e17433"
+  },
+  "processed_sha256": "83cd44ad422ce45a02280068f3b1ce294363c1a9fcc069cb23fe75a6011c34b9",
+  "expected_processed_shape": [
+    833,
+    19
+  ],
+  "expected_rq_n": {
+    "rq1": 551,
+    "rq2": 506,
+    "rq3": 481,
+    "rq4": 448
+  },
+  "comparison_reference": "User-provided original GitHub ZIP; checksum verification performed on 2026-10-25 (not a source retrieval date)."
+}
