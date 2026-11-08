@@ -137,7 +137,7 @@ environment versions, not strict minimum requirements.
 
 - RQ1 matched n=551, RQ2 n=506, RQ3 n=481 and RQ4 n=448. These counts
   **do not represent numbers of individual firms**.
-- Model fit/RMSE/MAE are **in-sample**; no out-of-sample forecast validation is claimed.
+- The original Week 5 model fit/RMSE/MAE metrics are **in-sample**. A separate, later Week 6 supplementary five-fold evaluation is now documented in `docs/week6_validation_reproduction.md`; it does not establish causal effects or new-country forecasting performance.
 - RQ4 reduced/full models share the same n=448. The classical joint test is
   significant at .05, but HC3 robust joint inference is not. We report both;
   we do **not** present a definitive significant joint effect.
@@ -151,3 +151,24 @@ environment versions, not strict minimum requirements.
 Do **not** run `01_download_data.py` to reproduce a frozen analysis: doing so
 would retrieve the latest published Eurostat revision, which could differ from
 this archived data. The original 2023/2025 research design is unchanged.
+
+
+## Week 6 supplementary reproducibility and held-out evaluation (8 November 2026)
+
+The archived Eurostat pipeline was rerun from a user-provided repository ZIP on 8 November 2026. Checksums, the 833-row, 19-column analytical dataset and RQ1–RQ4 sample sizes (551, 506, 481 and 448) matched the frozen-source records. This verification used the supplied ZIP, not an independently checked-out remote commit.
+
+A new supplementary script, `src/13_rq4_independent_validation.py`, evaluates the reduced and full RQ4 specifications using the same five shuffled folds (random seed 42) with preprocessing fitted inside training folds. It uses 448 complete-case country–industry contexts. Mean held-out RMSE is 6.819 percentage points for the reduced model and 6.869 for the full model; mean MAE is 4.863 and 4.890 percentage points, respectively. A separate country-holdout sensitivity is also documented, but it does not estimate transportable country fixed effects. These are predictive checks, not causal or firm-level validation.
+
+To reproduce from the repository root using the **archived inputs** (do not rerun the live download script):
+
+```bash
+python -m pip install -r requirements.txt
+python src/run_week5_pipeline.py
+python src/13_rq4_independent_validation.py
+```
+
+See `docs/week6_validation_reproduction.md` for the input provenance, model specifications, fold design, full results and limitations. Review the saved fold assignments and predictions in `outputs/tables/week6_validation/`. The `data/data_dictionary.csv` now enumerates all 19 processed columns, including six distinct Eurostat status-flag fields.
+
+## Offline research-output demonstrator
+
+`demo/research_benchmark.html` is an offline, static, read-only demonstration of archived RQ1–RQ4 findings and the independently re-executed five-fold RQ4 results. Open it in a browser without a network connection. It does **not** provide individual-firm predictions, live Eurostat retrieval, country–industry filters or a deployed analytics service.

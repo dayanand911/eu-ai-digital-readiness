@@ -1,0 +1,18 @@
+{
+  "purpose": "exploratory prediction validation; not causal inference",
+  "primary_protocol": "five_fold_contexts",
+  "primary_seed": 42,
+  "n": 448,
+  "k": 5,
+  "categorical_encoding": "one hot drop first handle unknown ignore, fit on training only",
+  "scaling": "none for OLS",
+  "method": "scikit-learn LinearRegression",
+  "sklearn_version": "1.8.0",
+  "python_version": "3.13.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "limitations": [
+    "random folds share countries and industries across folds",
+    "country-holdout extrapolation is not valid fixed effect transportability",
+    "sampling weights and survey-design error not available"
+  ]
+}
